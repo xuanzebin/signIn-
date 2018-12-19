@@ -7,8 +7,8 @@
         <text>创建人:{{item.creater}}</text>
       </view>
       <view class="formButton">
-        <button class="signIn">签到</button>
-        <button class="leave">请假</button>
+        <button class="signIn" disabled="{{formList[index].leave}}" bindtap="signInConfirm" data-index="{{index}}">{{formList[index].signIn===true?"已签到":"签到"}}</button>
+        <button class="leave" disabled="{{formList[index].signIn}}" bindtap="leaveConfirm" data-index="{{index}}">{{formList[index].leave===true?"已请假":"请假"}}</button>
       </view>
     </view>
   </view>

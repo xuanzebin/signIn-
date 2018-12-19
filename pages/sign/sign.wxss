@@ -3,6 +3,7 @@
   width:70%;
 }
 .signform{
+  margin-bottom:40rpx;
   border:1px solid black;
   padding:40rpx;
   border-radius:10rpx;
