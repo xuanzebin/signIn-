@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:for="{{formList}}" wx:key="{{index}}">
+    <view class="signform">
+      <view class="formMessage">
+        <text>名称：{{item.name}}</text>
+        <text>创建时间:{{item.time}}</text>
+        <text>创建人:{{item.creater}}</text>
+      </view>
+      <view class="formButton">
+        <button class="signIn">签到</button>
+        <button class="leave">请假</button>
+      </view>
+    </view>
+  </view>
+  <button class="signButton" bindtap="createSign">新建签到表</button>
+  <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
+    <text data-id="{{todo.objectId}}">
+      {{todo.content}}
+    </text>
+  </block>
+</view>

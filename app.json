@@ -1,0 +1,26 @@
+{
+  "pages":[
+    "pages/sign/sign",
+    "pages/create-signform/create-signform",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#595959",
+    "selectedColor": "#1c1b21",
+    "list": [{
+      "pagePath": "pages/sign/sign",
+      "text": "首页"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "个人"
+    }]  
+  }
+}

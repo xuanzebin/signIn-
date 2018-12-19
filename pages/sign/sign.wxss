@@ -1,0 +1,31 @@
+.signButton{
+  margin-top:200rpx;
+  width:70%;
+}
+.signform{
+  border:1px solid black;
+  padding:40rpx;
+  border-radius:10rpx;
+}
+.signform .formMessage{
+  display:flex;
+  flex-direction: column;
+}
+.signform .formMessage text{
+  margin:10rpx 0;
+}
+.signform .formButton{
+  display:flex;
+}
+.signform button{
+  width:250rpx;
+  margin:0 5rpx;
+}
+.signform .signIn{
+  background:rgb(0, 153, 255);
+  color:white;
+}
+.signform .leave{
+  background:red;
+  color:white;
+}

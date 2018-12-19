@@ -1,0 +1,19 @@
+form{
+  border:1px solid black;
+  border-radius:10rpx;
+  padding:20rpx;
+}
+.section textarea,
+.section input{
+  border:1px solid black;
+  margin-left:20rpx;
+  width:65%;
+}
+.section{
+  display:flex;
+  justify-content: flex-end;
+  margin-bottom:30rpx;
+}
+.section button{
+  width:40%;
+}
