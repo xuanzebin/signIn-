@@ -1,13 +1,6 @@
 const app=getApp()
 const AV = require('../.././libs/av-weapp-min.js')
 
-// var TestObject = AV.Object.extend('TestObject');
-// var testObject = new TestObject();
-// testObject.save({
-//   words: 'Hello World!'
-// }).then(function (object) {
-//   console.log(1)
-// })
 Page({
   data:{
     todos: [],
@@ -22,7 +15,7 @@ Page({
         todos.forEach((value,index)=>{
           let {name,time,creater,remarks,signIn,leave}=value.attributes
           let id=value.id
-          array.push({name,time,creater,remarks,signIn,leave,id})
+          array.unshift({name,time,creater,remarks,signIn,leave,id})
         })
         app.data.formList=array
         this.setData({ formList: app.data.formList })
@@ -45,9 +38,7 @@ Page({
     app.data.formList[formIndex].signIn = true
     this.setData({ formList: app.data.formList })
     let updateSignIn = AV.Object.createWithoutData('formList', this.data.formList[formIndex].id)
-    // 修改属性
     updateSignIn.set('signIn', true)
-    // 保存到云端
     updateSignIn.save()
   },
   leaveConfirm:function(e){

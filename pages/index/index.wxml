@@ -7,13 +7,5 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <button id="testButton">进入主页</button>
-  <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
-  <text data-id="{{todo.objectId}}">
-    {{todo.content}}
-  </text>
-  </block>
+  <button id="testButton" bindtap="intoIndex" wx:if="{{hasUserInfo}}">进入主页</button>
 </view>

@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/sign/sign",
-    "pages/create-signform/create-signform",
     "pages/index/index",
+    "pages/sign/sign",
+    "pages/uploadFile/uploadFile",
+    "pages/create-signform/create-signform",
     "pages/logs/logs"
   ],
   "window":{
@@ -17,10 +18,14 @@
     "selectedColor": "#1c1b21",
     "list": [{
       "pagePath": "pages/sign/sign",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "iconfont/home.png",
+      "selectedIconPath": "iconfont/home.png"
     },{
-      "pagePath": "pages/index/index",
-      "text": "个人"
+      "pagePath": "pages/uploadFile/uploadFile",
+      "text": "上传",
+      "iconPath": "iconfont/picture.png",
+      "selectedIconPath": "iconfont/picture.png"
     }]  
   }
 }

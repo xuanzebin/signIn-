@@ -1,4 +1,5 @@
-<view class="container">
+<view class="container">  
+  <button class="signButton" bindtap="createSign">新建签到表</button>
   <view wx:for="{{formList}}" wx:key="{{index}}">
     <view class="signform">
       <view class="formMessage">
@@ -12,10 +13,4 @@
       </view>
     </view>
   </view>
-  <button class="signButton" bindtap="createSign">新建签到表</button>
-  <block wx:for="{{todos}}" wx:for-item="todo" wx:key="objectId">
-    <text data-id="{{todo.objectId}}">
-      {{todo.content}}
-    </text>
-  </block>
 </view>

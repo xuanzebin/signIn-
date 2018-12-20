@@ -1,5 +1,5 @@
 .signButton{
-  margin-top:200rpx;
+  margin-bottom:100rpx;
   width:70%;
 }
 .signform{

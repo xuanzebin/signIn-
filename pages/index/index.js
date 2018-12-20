@@ -3,7 +3,6 @@
 const app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -11,9 +10,11 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+    this.setData({
+      userInfo: null,
+      hasUserInfo: false
     })
+    app.globalData.userInfo=null
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -44,11 +45,15 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  intoIndex(e){
+    wx.switchTab({
+      url: "../sign/sign"
     })
   }
 })

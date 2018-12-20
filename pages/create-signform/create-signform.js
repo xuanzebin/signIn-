@@ -23,7 +23,7 @@ Page({
       newForm.signIn=false
       newForm.leave=false
       newForm.id=formList.id
-      app.data.formList.push(newForm)
+      app.data.formList.unshift(newForm)
       wx.navigateBack({
         delta: 1
       })
