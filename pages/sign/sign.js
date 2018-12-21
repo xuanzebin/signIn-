@@ -13,6 +13,7 @@ Page({
       userNickName: app.globalData.userInfo.nickName,
       userPicUrl: app.globalData.userInfo.avatarUrl
     })
+
     const user = AV.User.current();
     // 调用小程序 API，得到用户信息
     wx.getUserInfo({

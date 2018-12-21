@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const AV = require('../.././libs/av-weapp-min.js')
 Page({
   data: {
     userInfo: {},
@@ -16,6 +17,9 @@ Page({
     app.globalData.userInfo=null
   },
   onLoad: function () {
+
+    AV.User.loginWithWeapp().then(user => {
+    }).catch(console.error)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
