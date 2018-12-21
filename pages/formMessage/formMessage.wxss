@@ -6,9 +6,10 @@
 }
 .signInListWrapper,
 .leaveListWrapper{
-  border:1px solid black;
+  border:4rpx solid black;
+  padding:10rpx;
   border-radius: 10rpx;
-  margin:40rpx 0;
+  margin:40rpx;
   display: flex;
   flex-direction: column;
 }
@@ -21,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin:12rpx;
 }
 text{
   font-weight: bold;

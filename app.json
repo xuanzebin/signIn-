@@ -4,7 +4,6 @@
     "pages/sign/sign",
     "pages/uploadFile/uploadFile",
     "pages/create-signform/create-signform",
-    "pages/logs/logs",
     "pages/formMessage/formMessage"
   ],
   "window": {

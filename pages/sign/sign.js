@@ -39,7 +39,7 @@ Page({
           signIn=JSON.parse(signIn)
           leave=JSON.parse(leave)
           let id = value.id
-          array.unshift({ name, time, creater, remarks, signIn, leave, id })
+          array.push({ name, time, creater, remarks, signIn, leave, id })
         })
         app.data.formList = array
         this.setData({ formList: app.data.formList })
@@ -57,18 +57,10 @@ Page({
     if (app.data.formList[formIndex].signIn[userNickName] === true) return
     app.data.formList[formIndex].signIn[userNickName] = true
     this.setData({ formList: app.data.formList })
-
-
-
-
     let updateSignIn = AV.Object.createWithoutData('formList', this.data.formList[formIndex].id)
     updateSignIn.set('signIn', JSON.stringify( app.data.formList[formIndex].signIn) )
     // app.data.formList[formIndex].signIn
     updateSignIn.save()
-
-
-
-
   },
   leaveConfirm(e){
     let formIndex = e.currentTarget.dataset.index
