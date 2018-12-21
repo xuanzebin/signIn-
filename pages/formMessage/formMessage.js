@@ -11,12 +11,12 @@ Page({
     formIndex:null,
     userList:[],
     signInList:[],
-    leaveList:[]
+    leaveList:[],
+    signInSum:0,
+    leaveSum:0
   },
   onLoad:function(e){
     this.setData({formIndex:e.index})
-  },
-  onReady: function (e) {
   },
   onShow(e){
     new AV.Query('_user')
@@ -50,7 +50,9 @@ Page({
         }
         this.setData({
           signInList,
-          leaveList
+          leaveList,
+          signInSum: signInList.length,
+          leaveSum:leaveList.length
         })
       })
       .catch(console.error)

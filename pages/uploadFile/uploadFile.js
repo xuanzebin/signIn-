@@ -18,7 +18,7 @@ Page({
       }
     });
     new AV.Query('_File')
-      .descending('createdAt')
+      .ascending('createdAt')
       .find()
       .then(todos => {
         let array = []
@@ -28,7 +28,7 @@ Page({
           let { url } = value.attributes
           let id = value.id
           if (time===this.data.fileUrl[0].time){
-            fileUrl[0].url.push(url)
+            fileUrl[0].url.unshift(url)
           } else {
             let newPic={  
               time,
@@ -37,7 +37,7 @@ Page({
             if (JSON.stringify(fileUrl[0]) === '{}'){
               fileUrl[0]=newPic
             } else {
-              fileUrl.push(newPic)
+              fileUrl.unshift(newPic)
             }
           }
         })

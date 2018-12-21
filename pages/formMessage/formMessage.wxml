@@ -8,6 +8,7 @@
           <text>{{item.nickName}}</text>
       </view>
     </view>
+    <text class="result">已签到人数：{{signInSum}}人</text>
   </view>
   
   <view class="leaveListWrapper">
@@ -18,5 +19,6 @@
           <text>{{item.nickName}}</text>
       </view>
     </view>
+    <text class="result">已请假人数：{{leaveSum}}人</text>
   </view>
 </view>

@@ -28,3 +28,7 @@ text{
   font-weight: bold;
   text-align: center;
 }
+.result{
+  color:red;
+  margin:6rpx 0;
+}
