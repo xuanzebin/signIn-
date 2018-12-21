@@ -1,0 +1,22 @@
+<!--pages/formMessage/formMessage.wxml-->
+<view>
+  <view class="signInListWrapper">
+    <text>已签到名单</text>
+    <view class="signInList">
+      <view wx:for="{{signInList}}" wx:key="{{index}}" class="messageWrapper">
+          <image src="{{item.avatarUrl}}" class="userPic" mode="aspectFit"></image>
+          <text>{{item.nickName}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="leaveListWrapper">
+    <text>已请假名单</text>
+    <view class="leaveList">
+      <view wx:for="{{leaveList}}" wx:key="{{index}}" class="messageWrapper">
+          <image src="{{item.avatarUrl}}" class="userPic" mode="aspectFit"></image>
+          <text>{{item.nickName}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,31 +1,35 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/sign/sign",
     "pages/uploadFile/uploadFile",
     "pages/create-signform/create-signform",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/formMessage/formMessage"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "borderStyle": "white",
     "color": "#595959",
     "selectedColor": "#1c1b21",
-    "list": [{
-      "pagePath": "pages/sign/sign",
-      "text": "首页",
-      "iconPath": "iconfont/home.png",
-      "selectedIconPath": "iconfont/home.png"
-    },{
-      "pagePath": "pages/uploadFile/uploadFile",
-      "text": "上传",
-      "iconPath": "iconfont/picture.png",
-      "selectedIconPath": "iconfont/picture.png"
-    }]  
+    "list": [
+      {
+        "pagePath": "pages/sign/sign",
+        "text": "首页",
+        "iconPath": "iconfont/home.png",
+        "selectedIconPath": "iconfont/home.png"
+      },
+      {
+        "pagePath": "pages/uploadFile/uploadFile",
+        "text": "上传",
+        "iconPath": "iconfont/picture.png",
+        "selectedIconPath": "iconfont/picture.png"
+      }
+    ]
   }
 }

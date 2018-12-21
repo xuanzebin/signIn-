@@ -15,13 +15,13 @@ Page({
     formList.set('creater', newForm.creater)
     formList.set('time', newForm.time);
     formList.set('remarks', newForm.remarks)
-    formList.set('signIn',false)
-    formList.set('leave',false)
+    formList.set('signIn','{}')
+    formList.set('leave','{}')
     // 设置优先级
     formList.save().then(function (formList) {
       console.log('objectId is ' + formList.id);
-      newForm.signIn=false
-      newForm.leave=false
+      newForm.signIn={}
+      newForm.leave={}
       newForm.id=formList.id
       app.data.formList.unshift(newForm)
       wx.navigateBack({

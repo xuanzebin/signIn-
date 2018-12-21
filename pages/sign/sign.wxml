@@ -1,15 +1,15 @@
 <view class="container">  
   <button class="signButton" bindtap="createSign">新建签到表</button>
   <view wx:for="{{formList}}" wx:key="{{index}}">
-    <view class="signform">
+    <view class="signform" bindtap="clickIntoForm" data-index="{{index}}">
       <view class="formMessage">
         <text>名称：{{item.name}}</text>
         <text>创建时间:{{item.time}}</text>
         <text>创建人:{{item.creater}}</text>
       </view>
       <view class="formButton">
-        <button class="signIn" disabled="{{formList[index].leave}}" bindtap="signInConfirm" data-index="{{index}}">{{formList[index].signIn===true?"已签到":"签到"}}</button>
-        <button class="leave" disabled="{{formList[index].signIn}}" bindtap="leaveConfirm" data-index="{{index}}">{{formList[index].leave===true?"已请假":"请假"}}</button>
+        <button class="signIn" disabled="{{formList[index].leave[userNickName]}}" bindtap="signInConfirm" data-index="{{index}}">{{formList[index].signIn[userNickName]===true?"已签到":"签到"}}</button>
+        <button class="leave" disabled="{{formList[index].signIn[userNickName]}}" bindtap="leaveConfirm" data-index="{{index}}">{{formList[index].leave[userNickName]===true?"已请假":"请假"}}</button>
       </view>
     </view>
   </view>
