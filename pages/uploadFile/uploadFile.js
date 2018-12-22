@@ -24,7 +24,10 @@ Page({
         let array = []
         let fileUrl = this.data.fileUrl
         todos.forEach((value, index) => {
-          let time = value.createdAt.getFullYear() + '-' + value.createdAt.getMonth() + '-' + value.createdAt.getDay()
+          console.log(value)
+          console.log(value.createdAt.getUTCMonth())
+          let month = 1 + value.createdAt.getMonth()
+          let time = value.createdAt.getFullYear() + '-' + month + '-' + value.createdAt.getDate()
           let { url } = value.attributes
           let id = value.id
           if (time===this.data.fileUrl[0].time){
@@ -59,7 +62,8 @@ Page({
         }).save().then(
           file => {
             let fileUrl = this.data.fileUrl
-            let time = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDay()
+            let month = 1 + new Date().getMonth()
+            let time = new Date().getFullYear() + '-' + month + '-' + new Date().getDate()
             let url=file.url()
             if (time === this.data.fileUrl[0].time) {
               fileUrl[0].url.unshift(url)
