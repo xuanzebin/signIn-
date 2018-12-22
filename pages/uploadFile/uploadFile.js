@@ -77,6 +77,11 @@ Page({
               }
             }
             this.setData({ fileUrl})
+            wx.showToast({
+              title: '上传成功',
+              icon: 'success',
+              duration: 2000
+            })
           }
         ).catch(console.error);
       }

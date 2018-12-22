@@ -3,7 +3,12 @@ const AV = require('../.././libs/av-weapp-min.js')
 
 Page({
   data:{
-
+    formOwner:null
+  },
+  onReady(){
+    const user = AV.User.current();
+    // 调用小程序 API，得到用户信息
+    this.setData({formOwner:user.id})
   },
   signformSubmit:function(e){
     let newForm=e.detail.value
@@ -17,16 +22,23 @@ Page({
     formList.set('remarks', newForm.remarks)
     formList.set('signIn','{}')
     formList.set('leave','{}')
+    formList.set('owner',this.data.formOwner)
     // 设置优先级
     formList.save().then(function (formList) {
-      console.log('objectId is ' + formList.id);
       newForm.signIn={}
       newForm.leave={}
       newForm.id=formList.id
       app.data.formList.unshift(newForm)
-      wx.navigateBack({
-        delta: 1
+      wx.showToast({
+        title: '创建成功',
+        icon: 'success',
+        duration: 2000
       })
+      setTimeout(()=>{
+        wx.navigateBack({
+          delta: 1
+        })
+      },500)
     }, function (error) {
       console.error(error);
     });

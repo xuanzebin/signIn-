@@ -4,9 +4,10 @@
 }
 .signform{
   margin-bottom:40rpx;
-  border:1px solid black;
+  border:4rpx solid black;
+  border-right-color: transparent;
   padding:40rpx;
-  border-radius:10rpx;
+  padding-right:0;
 }
 .signform .formMessage{
   display:flex;
@@ -35,4 +36,16 @@
 }
 .title{
   font-weight: bold;
+}
+.formList{
+  display: flex;
+  justify-content: center;
+
+}
+.iconWrapper{
+  width: 60rpx;
+  border:4rpx solid black;
+  border-left-color: transparent;
+  margin-bottom:40rpx;
+  margin-left:-6rpx; 
 }

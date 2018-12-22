@@ -6,7 +6,8 @@ Page({
     todos: [],
     formList:app.data.formList,
     userNickName: null,
-    userPicUrl: null
+    userPicUrl: null,
+    userId:null
   },
   onReady(e){
     this.setData({
@@ -22,6 +23,9 @@ Page({
         user.set(userInfo).save().then(user => {
           // 成功，此时可在控制台中看到更新后的用户信息
           console.log(user.toJSON())
+          this.setData({
+            userId: user.toJSON().objectId
+          })
         }).catch(console.error);
       }
     })
@@ -36,13 +40,14 @@ Page({
       .then(todos => {
         let array = []
         todos.forEach((value, index) => {
-          let { name, time, creater, remarks, signIn, leave } = value.attributes
+          let { name, time, creater, remarks, signIn, leave,owner } = value.attributes
           signIn=JSON.parse(signIn)
           leave=JSON.parse(leave)
           let id = value.id
-          array.push({ name, time, creater, remarks, signIn, leave, id })
+          array.push({ name, time, creater, remarks, signIn, leave, id,owner })
         })
         app.data.formList = array
+        console.log(array)
         this.setData({ formList: app.data.formList })
       })
       .catch(console.error);
@@ -90,5 +95,22 @@ Page({
       path: '/pages/index/index'
 
     }
+  },
+  deleteForm(e){
+    let index=e.currentTarget.dataset.index
+    var form = AV.Object.createWithoutData('formList',this.data.formList[index].id );
+    form.destroy().then( (success)=> {
+      console.log('删除成功')
+      let formList=this.data.formList
+      formList.splice(index,1)
+      this.setData({formList})
+      wx.showToast({
+        title: '删除成功',
+        icon: 'success',
+        duration: 2000
+      })
+    }, function (error) {
+      console.log('删除失败')
+    });
   }
 })
