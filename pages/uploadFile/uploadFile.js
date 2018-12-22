@@ -24,8 +24,6 @@ Page({
         let array = []
         let fileUrl = this.data.fileUrl
         todos.forEach((value, index) => {
-          console.log(value)
-          console.log(value.createdAt.getUTCMonth())
           let month = 1 + value.createdAt.getMonth()
           let time = value.createdAt.getFullYear() + '-' + month + '-' + value.createdAt.getDate()
           let { url } = value.attributes
@@ -102,6 +100,17 @@ Page({
       foldCheck[index] = true
     }
     this.setData({foldCheck})
+  },
+  onShareAppMessage: function () {
+    return {
+
+      title: '社团签到',
+
+      desc: '快拉上你的社团小伙伴一起来签到和分享吧！~',
+
+      path: '/pages/index/index'
+
+    }
   }
 })
 

@@ -3,10 +3,10 @@
   <view wx:for="{{formList}}" wx:key="{{index}}">
     <view class="signform" bindtap="clickIntoForm" data-index="{{index}}">
       <view class="formMessage">
-        <text>名称：{{item.name}}</text>
-        <text>创建时间:{{item.time}}</text>
-        <text>创建人:{{item.creater}}</text>
-        <text class="remarks">备注:{{item.remarks}}</text>
+        <view class="row"> <text class="title">名称：</text> <text class="content">{{item.name}}</text> </view>
+        <view class="row"> <text class="title">创建时间：</text> <text class="content">{{item.time}}</text> </view>
+        <view class="row"> <text class="title">创建人：</text> <text class="content">{{item.creater}}</text> </view>
+        <view class="row"> <text class="remarks title">备注：</text> <text class="content">{{item.remarks}}</text> </view>
       </view>
       <view class="formButton">
         <button class="signIn" disabled="{{formList[index].leave[userNickName]}}" bindtap="signInConfirm" data-index="{{index}}">{{formList[index].signIn[userNickName]===true?"已签到":"签到"}}</button>

@@ -58,6 +58,17 @@ Page({
     wx.switchTab({
       url: "../sign/sign"
     })
+  },
+  onShareAppMessage: function () {
+    return {
+
+      title: '社团签到',
+
+      desc: '快拉上你的社团小伙伴一起来签到和分享吧！~',
+
+      path: '/pages/index/index'
+
+    }
   }
 })
 
